@@ -1,0 +1,29 @@
+name: Generate Theme Readme
+
+on:
+  push:
+    branches:
+      - master
+    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' 
+      - name: hitung qulyubi
+        run: python index.py
+
+      - name: Run Script
+        uses: skx/github-action-tester@master
+        with:
+          script: ./scripts/push-theme-readme.sh
+        env:
+          CI: true
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          GH_REPO: ${{ secrets.GH_REPO }}
