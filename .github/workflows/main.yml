@@ -16,13 +16,17 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x' 
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
       - name: hitung qulyubi
         run: python index.py
 
       - name: Run Script
         uses: skx/github-action-tester@master
         with:
-          script: ./scripts/push-theme-readme.sh
+          script: ./scripts/push.sh
         env:
           CI: true
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
