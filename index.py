@@ -18,8 +18,11 @@ kurs=kurs["rates"]["IDR"]
 jumlah=kurs*count
 popo="""
 **JUMLAH LINK YANG DI SCRAPE RESA** : %s
+
 **KURS GBP/IDR SAAT INI**: %s
+
 KURS DIDAPATKAN DARI https://api.exchangeratesapi.io/latest?base=GBP&symbols=IDR
+
 **JUMLAH YANG HARUS DIBAYARKAN KE QULYUBI SETELAH WITHDRAW 
 
 # 💰 %s RUPIAH
